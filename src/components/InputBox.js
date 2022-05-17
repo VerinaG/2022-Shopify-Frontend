@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { apiFetch } from "../api/OpenApi";
+import CustomListBox from "./CustomListbox";
 
 const InputBox = ({ apiResponse, setApiResponse }) => {
   const maxCount = 280;
@@ -37,13 +38,14 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
 
   return (
     <div>
+      <CustomListBox></CustomListBox>
       <select name="engines" onChange={(e) => selectEngine(e)}>
         <option value="text-curie-001">text-curie-001</option>
         <option value="text-davinci-002">text-davinci-002</option>
         <option value="text-babbage-001">text-babbage-001</option>
         <option value="text-ada-001">text-ada-001</option>
       </select>
-      <textarea ref={userText} onChange={(e) => characterCount(e)}></textarea>
+      <textarea ref={userText} onChange={(e) => characterCount(e)} maxLength={280}></textarea>
       <div>{charCount}/280</div>
       <button onClick={() => generatePrompt()}>Need Inspiration?</button>
       <button onClick={() => submitRequest()}>Submit</button>
