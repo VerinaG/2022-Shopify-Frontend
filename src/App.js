@@ -6,10 +6,10 @@ import ResultList from "./components/ResultList";
 
 function App() {
   const [apiResponse, setApiResponse] = useState("");
-  const [responseArray, setResponseArray] = useState([]);
+  const [responseArray, setResponseArray] = useState([])
   useEffect(() => {
-    let newArr = [apiResponse, ...responseArray];
-    setResponseArray(newArr);
+    // let newArr = [apiResponse, ...responseArray];
+    setResponseArray(prevArr => [apiResponse, ...prevArr]);
   }, [apiResponse]);
 
   return (
