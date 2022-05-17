@@ -1,7 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import InputBox from "./components/InputBox";
-import ResultBox from "./components/ResultBox";
+// import ResultBox from "./components/ResultBox";
+import ResultList from "./components/ResultList";
 
 function App() {
   const [apiResponse, setApiResponse] = useState("");
@@ -17,7 +18,7 @@ function App() {
         apiResponse={apiResponse}
         setApiResponse={setApiResponse}
       ></InputBox>
-      <ResultBox responseArray={responseArray}></ResultBox>
+      <ResultList responseArray={responseArray}></ResultList>
     </>
   );
 }

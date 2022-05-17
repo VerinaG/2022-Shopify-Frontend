@@ -1,16 +1,8 @@
-const ResultBox = ({ responseArray }) => {
+const ResultBox = ({ el, index }) => {
   return (
     <div>
-      {responseArray.map((el, index) => {
-        return (
-          <div>
-            <div key={index}>
-              <div>{el.prompt}</div>
-              <div>{el.response}</div>
-            </div>
-          </div>
-        );
-      })}
+        <div>{el.prompt}</div>
+        <div>{el.response}</div>
     </div>
   );
 };
