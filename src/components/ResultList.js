@@ -1,5 +1,6 @@
 import React from "react";
 import ResultBox from "./ResultBox";
+import "../css/Results.css"
 
 const ResultList = ({ responseArray }) => {
   console.log(responseArray[0])
@@ -7,7 +8,7 @@ const ResultList = ({ responseArray }) => {
       <div>
          {responseArray[0] !== '' && responseArray.map((el, index) => {
         return (
-          <div key={index}>
+          <div className="Results" key={index}>
             <ResultBox el={el} index={index}></ResultBox>
           </div>
         );

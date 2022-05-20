@@ -1,0 +1,20 @@
+.Results {
+    background-color: mintcream;
+    padding: 10px;
+    margin: 20px;
+    border: 3px solid lightgray;
+    border-radius: 25px;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* gap: 1rem; */
+}
+
+.showMoreText {
+    /* display: flex;
+    gap: 2rem;
+    background-color: var(showMore, red); */
+}
+
+.showMoreText .resultItem {
+    /* flex: 1; */
+}
