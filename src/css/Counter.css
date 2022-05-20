@@ -1,0 +1,13 @@
+svg{
+    width: 10vmin;
+    height: 10vmin;
+}
+
+circle{
+    fill: none;
+    stroke-width: 3;
+}
+
+#gray{
+    stroke: lightgray;
+}
