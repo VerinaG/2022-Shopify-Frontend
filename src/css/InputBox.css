@@ -1,0 +1,8 @@
+.inputBox{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inputBox .first{
+    margin-right: auto;
+}

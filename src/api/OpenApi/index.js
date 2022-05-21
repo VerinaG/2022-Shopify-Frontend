@@ -1,8 +1,8 @@
 export async function apiFetch(prompt, engine = "text-ada-001") {
   const data = {
     prompt: prompt,
-    temperature: 0.5,
-    max_tokens: 64,
+    temperature: 0.8,
+    max_tokens: 100,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
