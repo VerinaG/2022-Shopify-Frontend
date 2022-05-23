@@ -1,20 +1,19 @@
 import { useRef, useState } from "react";
 import { apiFetch } from "../api/OpenApi";
 import Counter from "./Counter";
-import CustomListBox from "./CustomListbox";
 import "../css/Counter.css";
 import "../css/InputBox.css";
 
 const InputBox = ({ apiResponse, setApiResponse }) => {
-  const maxCount = 280;
   const userText = useRef(null);
-  const [engine, setEngine] = useState("text-curie-001");
+  const [engine, setEngine] = useState(false);
   const [charCount, setCharCount] = useState(0);
   const [ringStyle, setRingStyle] = useState({
     stroke: "",
     strokeDasharray: "",
   });
 
+  // Calling request function to get response from API
   const submitRequest = async () => {
     let text = userText.current.value;
     let promptResponse = await apiFetch(text, engine);
@@ -28,6 +27,7 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
     setCharCount(0);
   };
 
+  // Calling API to generate random prompts 
   const generatePrompt = async () => {
     let text = "Generate random prompt.";
     let randomPrompt = await apiFetch(text, "text-curie-001");
@@ -41,13 +41,13 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
   };
 
   const characterCount = (e) => {
-    // setCharCount(maxCount - e.target.value.length);
     setCharCount(e.target.value.length);
     settingRingStyle(charCount);
   };
 
+  // Updating ring as character count is updated
   const settingRingStyle = (charCount) => {
-    const r = 15;
+    const r = 8;
     const circleLength = 2 * Math.PI * r;
     const twitterBlue = "rgb(29, 161, 242)";
     let colored = (circleLength * charCount) / 280;
@@ -66,8 +66,10 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
 
   return (
     <div>
-      {/* <CustomListBox></CustomListBox> */}
+      <h2>CONVERSATION PRACTICE</h2>
+      <h3>It's hard making conversation, especially after the pandemic. Play with this AI to get back into the groove of thinking of creative conversation starters, and fun responses!</h3>
       <select name="engines" onChange={(e) => selectEngine(e)}>
+        <option selected disabled hidden>Choose your engine!</option>
         <option value="text-curie-001">text-curie-001</option>
         <option value="text-davinci-002">text-davinci-002</option>
         <option value="text-babbage-001">text-babbage-001</option>
@@ -79,15 +81,12 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
         maxLength={280}
         placeholder="Type your prompt here... (280 characters)"
       ></textarea>
-      {/* <div>{charCount}/280</div> */}
       <div className="inputBox">
         <button className="first" onClick={() => generatePrompt()}>
           Need Inspiration?
         </button>
         <Counter charCount={charCount} ringStyle={ringStyle}></Counter>
-        <button className="last" onClick={() => submitRequest()}>Submit</button>
-        
-        
+        <button disabled={!charCount || !engine} className="last" onClick={() => submitRequest()}>Submit</button>        
       </div>
     </div>
   );

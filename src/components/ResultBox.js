@@ -2,11 +2,12 @@ import { useState, useRef } from "react";
 import "../css/Results.css";
 
 const ResultBox = ({ el, index }) => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
   const inputLength = useRef(false);
   const userPrompt = "Prompt: ".concat(el.prompt);
   const userResponse = "Response: ".concat(el.response);
 
+  // Set checkInputLength variable to hide Show More/Show Less button if prompt and response are short
   const checkInputLength = () => {
     if (el.prompt.length > 50 || el.response.length > 100) {
       inputLength.current = true;
@@ -17,7 +18,7 @@ const ResultBox = ({ el, index }) => {
 
   return (
     <div>
-      <div>
+      <div className="ResultBox">
         {showMore || el.prompt.length < 50
           ? userPrompt
           : `${userPrompt.substring(0, 50).concat("...")}`}

@@ -1,8 +1,9 @@
+// Call to openApi
 export async function apiFetch(prompt, engine = "text-ada-001") {
   const data = {
-    prompt: prompt,
+    prompt: `\n\nQ: ${prompt}\nA:`,
     temperature: 0.8,
-    max_tokens: 100,
+    max_tokens: 300,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
@@ -18,8 +19,10 @@ export async function apiFetch(prompt, engine = "text-ada-001") {
       },
       body: JSON.stringify(data),
     }
-  );
-
+  ).catch((error) => {
+    window.alert("Error! Sorry, something happened on our end, this has nothing to do with you! Please try again or wait a few minutes to let the elves fix the issue.")
+  });
+  
   let result = await response.json();
   return result.choices[0].text;
 }

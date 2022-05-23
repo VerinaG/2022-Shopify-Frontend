@@ -1,29 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
 .Results {
-    background-color: #EFEFEF;
-    font-family: 'Playfair Display' ;
+    background-color: white;
+    font-family: 'Playfair Display';
     padding: 10px;
-    margin: 20px;
+    margin: 20px 0px;
     border: 3px solid lightgray;
-    border-radius: 25px;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* gap: 1rem; */
+    border-radius: 10px;
+    display: flex;
+    font-size: 15px;
+    width: 97%;
 }
 
-.showMoreText {
-    /* display: flex;
-    gap: 2rem;
-    background-color: var(showMore, red); */
-}
-
-.showMoreText .resultItem {
-    /* flex: 1; */
+.ResultBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .showButton{
-    background-color: 'rgba(52, 52, 52, 0.8';
-    outline: none;
-
+    background-color: white;
+    border: 1.5px solid #ccc;
+    padding: 2px;
+    margin-top: 5px;
 }
+
