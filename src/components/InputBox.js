@@ -16,7 +16,7 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
   // Calling request function to get response from API
   const submitRequest = async () => {
     let text = userText.current.value;
-    let promptResponse = await apiFetch(text, engine);
+    let promptResponse = await apiFetch(text, engine, 300);
     let responseObj = {
       prompt: text,
       response: promptResponse,
@@ -30,7 +30,7 @@ const InputBox = ({ apiResponse, setApiResponse }) => {
   // Calling API to generate random prompts 
   const generatePrompt = async () => {
     let text = "Generate random prompt.";
-    let randomPrompt = await apiFetch(text, "text-curie-001");
+    let randomPrompt = await apiFetch(text, "text-curie-001", 164);
     userText.current.value = randomPrompt.trim();
     settingRingStyle(userText.current.value.length);
     setCharCount(userText.current.value.length);
