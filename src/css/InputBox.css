@@ -27,11 +27,13 @@ h3 {
     margin-right: auto;
     height: 20px;
     vertical-align: center;
+    color: black;
 }
 
 .inputBox .last{
     height: 20px;
     vertical-align: center;
+    
 }
 
 select {
@@ -65,7 +67,6 @@ button {
     border: none;
     border-radius: 5px;
     padding: 7px 7px 21px 7px;  
-    color: black;
 }
   
 button:hover:enabled {
@@ -73,10 +74,12 @@ button:hover:enabled {
     box-shadow: #A9A9A9 0 4px 8px;
     transform: translateY(-2px);
     border: none;
+    color: black;
 }
   
 button:active:enabled {
     box-shadow: 0 5px 4px #A9A9A9;
     transform: translateY(2px);
-   border: none;
+    border: none;
+    color: black;
 }
