@@ -20,7 +20,7 @@ export async function apiFetch(prompt, engine = "text-ada-001") {
       body: JSON.stringify(data),
     }
   ).catch((error) => {
-    window.alert("Error! Sorry, something happened on our end, this has nothing to do with you! Please try again or wait a few minutes to let the elves fix the issue.")
+    return window.alert("Error! Sorry, something happened on our end, this has nothing to do with you! Please try again or wait a few minutes to let the elves fix the issue.")
   });
   
   let result = await response.json();

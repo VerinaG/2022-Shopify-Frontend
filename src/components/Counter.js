@@ -4,7 +4,7 @@ import React from "react";
 const Counter = ({ charCount, ringStyle }) => {
   return (
     <div id="Counter">
-      <svg>
+      <svg width="40" height="30">
         <circle id="gray" cx="50%" cy="50%" r="8"></circle>
         <circle id="colored" cx="50%" cy="50%" r="8" style={ringStyle}></circle>
       </svg>
