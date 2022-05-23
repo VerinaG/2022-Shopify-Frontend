@@ -6,9 +6,8 @@ This Conversation Practice application was created to help you get your social s
 - See a record of previous prompts
 - Select from a range of AIs to keep the conversation interesting 
 - Conventiently works on desktop and mobile
-- 
 
 # Usage
 
 This project can be accessed at: 
-[https://conversation-practice.vercel.app/]
+https://conversation-practice.vercel.app/
