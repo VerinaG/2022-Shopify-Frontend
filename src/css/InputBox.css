@@ -6,7 +6,6 @@ h2 {
     font-family: 'Playfair Display', serif;
     font-size: 37px;
     background-image: linear-gradient(to left, #A9A9A9, #9fd1dc);
-    /* text-shadow: 0 1px 1px rgba(0,0,0, .8); */
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -40,6 +39,7 @@ select {
     padding: 3px;
     margin-bottom: 1%;
     font-family: "JetBrains Mono",monospace;
+    color: black;
 }
 
 option:hover{
@@ -64,7 +64,8 @@ button {
     font-family: "JetBrains Mono",monospace;
     border: none;
     border-radius: 5px;
-    padding: 7px 7px 21px 7px;   
+    padding: 7px 7px 21px 7px;  
+    color: black;
 }
   
 button:hover:enabled {

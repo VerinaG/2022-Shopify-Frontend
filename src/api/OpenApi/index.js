@@ -3,7 +3,7 @@ export async function apiFetch(prompt, engine, token) {
   const data = {
     prompt: `\n\nQ: ${prompt}\nA:`,
     temperature: 0.8,
-    max_tokens: {token},
+    max_tokens: token,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
