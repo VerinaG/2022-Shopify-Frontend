@@ -5,7 +5,7 @@ This Conversation Practice application was created to help you get your social s
 - Generate random prompts when your creativity is running low
 - See a record of previous prompts
 - Select from a range of AIs to keep the conversation interesting 
-- Conventiently works on desktop and mobile
+- Available on desktop and mobile
 
 # Usage
 
